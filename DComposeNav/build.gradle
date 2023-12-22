@@ -1,11 +1,12 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
+    id 'maven-publish'
 }
 
 android {
     namespace 'com.deonolarewaju.dcomposenav'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         minSdk 24
@@ -21,11 +22,32 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = "17"
+    }
+}
+
+publishing {
+    publications {
+        bar(MavenPublication) {
+            groupId "com.deonolarewaju"
+            artifactId "dcomposenav"
+            version "0.0.9-alpha"
+        }
+    }
+
+    repositories {
+        maven {
+            name "GithubPackages"
+            url uri("https://maven.pkg.github.com/deonwaju/dcompose-navigator")
+            credentials {
+                username = "deonwaju"
+                password = "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"
+            }
+        }
     }
 }
 
@@ -37,7 +59,6 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.androidx.test.ext.junit
     androidTestImplementation libs.espresso.core
-
 
     implementation libs.activity.compose
     implementation platform(libs.compose.bom)
