@@ -28,24 +28,32 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-}
-
-publishing {
-    publications {
-        bar(MavenPublication) {
-            groupId "com.deonolarewaju"
-            artifactId "dcomposenav"
-            version "0.0.9-alpha"
+    java {
+        toolchain {
+            languageVersion.set(JavaLanguageVersion.of(11)) // Set the desired Java version
         }
     }
+}
 
-    repositories {
-        maven {
-            name "GithubPackages"
-            url uri("https://maven.pkg.github.com/deonwaju/dcompose-navigator")
-            credentials {
-                username = "deonwaju"
-                password = "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"
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.deonolarewaju'
+                artifactId = 'dcomposenav'
+                version = '0.0.9-alpha'
+            }
+        }
+
+        repositories {
+            maven {
+                name = "GithubPackages"
+                url = uri("https://maven.pkg.github.com/deonwaju/dcompose-navigator")
+                credentials {
+                    username = "deonwaju"
+                    password = "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"
+                }
             }
         }
     }
