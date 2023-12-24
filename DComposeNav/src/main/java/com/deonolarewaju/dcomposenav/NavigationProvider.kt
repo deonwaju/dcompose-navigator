@@ -32,5 +32,3 @@ fun navigateTo(navController: NavController, key: String, route: String, data: A
         e.printStackTrace()
     }
 }
-//About
-//Library for navigation without or with arguments carrying data

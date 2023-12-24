@@ -63,5 +63,7 @@ dependencies {
     androidTestImplementation libs.ui.test.junit4
     debugImplementation libs.ui.tooling
     debugImplementation libs.ui.test.manifest
-    implementation project(':DComposeNav')
+//    implementation project(':DComposeNav')
+    implementation 'com.github.deonwaju:dcompose-navigator:1.0.0-alpha'
+
 }

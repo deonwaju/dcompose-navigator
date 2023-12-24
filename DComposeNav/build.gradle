@@ -42,7 +42,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.deonolarewaju'
                 artifactId = 'dcomposenav'
-                version = '0.0.9-alpha'
+                version = '1.0.0-alpha'
             }
         }
 
@@ -71,5 +71,6 @@ dependencies {
     implementation libs.activity.compose
     implementation platform(libs.compose.bom)
     implementation "androidx.navigation:navigation-compose:2.7.5"
+    implementation 'com.github.deonwaju:dcompose-navigator:1.0.0-alpha'
 
 }
