@@ -78,6 +78,7 @@ fun navigateToExample(navController: NavController) {
     navigateTo(navController, "key", "destinationRoute", data)
 }
 ```
+[![](https://jitpack.io/v/deonwaju/dcompose-navigator.svg)](https://jitpack.io/#deonwaju/dcompose-navigator)
 
 ## Contribution
 Contributions are welcome! If you have any ideas, improvements, or bug fixes, feel free to open an issue or submit a pull request.
